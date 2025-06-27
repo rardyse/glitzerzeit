@@ -1,0 +1,54 @@
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #ffd1dc, #ffe6f0, #fff8f0);
+    color: #4a4a4a;
+    text-align: center;
+}
+
+h1, h2, #habit-tracker h2, #journal-intime h2, #to-do-list h2 {
+    font-family: "Pacifico", cursive;
+    color: #3c3137;
+}
+
+h1 { font-size: 3rem; margin-top: 20px; }
+h2, #habit-tracker h2, #journal-intime h2, #to-do-list h2 { font-size: 2.5rem; margin-bottom: 40px; }
+h3 {
+    font-size: 1.25rem;
+    color: #3c3137;
+    margin-bottom: 30px;
+    font-family: 'Comic Sans MS', sans-serif;
+    background: linear-gradient(90deg, #ffc0cb, #ffd1dc); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(95, 85, 85, 0.5);
+    transition: transform 0.3s ease, text-shadow 0.3s ease; 
+}
+
+p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.8;
+    margin: 2px auto;
+    max-width: 800px;
+    background: linear-gradient(90deg, #58253f, #ffb6c1);
+    -webkit-background-clip: text;
+    color: transparent;
+    position: relative;
+    padding: 20px;
+}
+
+p:hover {
+    color: #ff99aa;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+::placeholder {
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 1rem; 
+    color: #9d9b9b; 
+    opacity: 1; 
+}
