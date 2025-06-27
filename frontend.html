@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitzerzeit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/schreiben.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Startseite</a></li>
+            <li><a href="#mood-tracker">Stimmungs-Tracker</a></li>
+            <li><a href="#habit-tracker">Gewohnheits-Tracker</a></li>
+            <li><a href="#journal-intime">Tagebuch</a></li>
+            <li><a href="#to-do-list">Aufgabenliste</a></li>
+        </ul>
+    </nav>
+
+        <div class="container">
+            <h1>Willkommen bei Glitzerzeit!</h1>
+            <p>Glitzerzeit ist mehr als nur eine Webanwendung... es ist IHR persönlicher Begleiter, der Ihnen hilft, Ihre Stimmung zu erfassen, Aufgaben zu organisieren, neue Gewohnheiten zu entwickeln und Ihre Gedanken auf kreative Weise zu ordnen !</p>
+            <img src="img/home.png" alt="Glitzerzeit BILD">
+        </div>
+    </section>
+    
+    <section id="mood-tracker" class="section-mood-tracker">
+        <div class="container">
+            <h2>. ݁₊ ⊹ ⟡ ݁ .⊹₊ ݁. Stimmungs-Tracker . ݁₊⊹ ⟡ ݁ .⊹ ₊ ݁.</h2>
+            <form id="mood-form">
+                <label for="mood">Wählen Sie Ihre Stimmung:</label>
+                <select id="mood" name="mood" required>
+                    <option value="glücklich">😊 Glücklich</option>
+                    <option value="traurig">😢 Traurig</option>
+                    <option value="gestresst">😰 Gestresst</option>
+                    <option value="motiviert">😁 Motiviert</option>
+                    <option value="custom">🌟 Benutzerdefiniert</option>
+                </select>
+    
+                <div id="custom-mood-section" style="display: none; margin-top: 10px;">
+                    <label for="custom-mood">Benutzerdefinierte Stimmung:</label>
+                    <input type="text" id="custom-mood" name="custom-mood" placeholder="Z.B. Zufrieden" />
+
+                    <label for="custom-emoji">Benutzerdefiniertes Emoji:</label>
+                    <input type="text" id="custom-emoji" name="custom-emoji" placeholder="Z.B. 😭" maxlength="2" />
+                </div>
+    
+                <label for="note">Warum fühlen Sie sich so?</label>
+                <textarea id="note" name="note" rows="4" placeholder="Z.B. Ich bin glücklich, weil ich eine gute Zeit mit meiner Familie hatte ^^"  required></textarea>
+    
+                <button type="submit">Senden</button>
+            </form>
+            <div id="mood-response"></div>
+        </div>
+    </section>
+    
+    <section id="habit-tracker" class="section-habit-tracker">
+        <div class="container">
+            <h2>. ݁₊ ⊹ ⟡ ݁ .⊹₊ ݁. Gewohnheits-Tracker . ݁₊⊹ ⟡ ݁ .⊹ ₊ ݁.</h2>
+            <form id="habit-form">
+                <label for="habit-name">Neue Gewohnheit hinzufügen:</label>
+                <input type="text" id="habit-name" name="habit-name" placeholder="Z.B. Wasser trinken" required>
+    
+                <label for="habit-progress">Fortschritt (%):</label>
+                <input type="number" id="habit-progress" name="habit-progress" min="0" max="100" placeholder="Z.B. 15%" required>
+    
+                <button type="submit">Hinzufügen</button>
+            </form>
+    
+            <div id="habit-response"></div>
+            <div id="habit-list">
+                <h3>Deine Gewohnheiten</h3>
+                <ul></ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="journal-intime" class="section-journal-intime">
+        <div class="container">
+            <h2>. ݁₊ ⊹ . ݁ ⟡ ݁ . ⊹ ₊ ݁. Tagebuch . ݁₊ ⊹ . ݁ ⟡ ݁ . ⊹ ₊ ݁.</h2>
+            <form id="journal-form">
+                <label for="journal-entry">Ihre Gedanken:</label>
+                <textarea id="journal-entry" name="journal-entry" rows="4" placeholder="Schreiben Sie hier Ihre Gedanken..." required></textarea>
+                <button type="submit">Speichern</button>
+            </form>
+    
+            <div id="journal-response"></div>
+            <div id="journal-list">
+                <h3>Frühere Einträge</h3>
+                <ul></ul>
+        </div>
+        </div>
+    </section>
+    
+    <section id="to-do-list" class="section-to-do-list">
+        <div class="container">
+            <h2>. ݁₊ ⊹ . ݁ ⟡ ݁ . ⊹ ₊ ݁. Aufgabenliste . ݁₊ ⊹ . ݁ ⟡ ݁ . ⊹ ₊ ݁.</h2>
+            <form id="todo-form">
+                <label for="todo-task">Neue Aufgabe:</label>
+                <input type="text" id="todo-task" name="todo-task" placeholder="Z.B. Einkaufen" required>
+                <button type="submit">Hinzufügen</button>
+            </form>
+    
+            <div id="todo-response"></div>
+            <div id="todo-list">
+                <h3>Deine Aufgaben</h3>
+                <ul></ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="thanks" class="w3-container w3-pale-pink w3-round-large w3-padding-32 w3-center">
+        <div class="w3-card w3-round-large w3-padding w3-pale-pink">
+            <h2 style="color: #ffc0cb; font-size: 2.5em; text-align: center, cursive; text-shadow: 1px 1px 2px #fff;">
+                .𖥔 ݁ ˖   ✦    ‧₊˚ ⋅°❀⋆.   Vielen DANK!   .⋆❀°.𖥔 ݁ ˖   ✦    ‧₊˚ ⋅
+            </h2>
+            <p class="w3-large w3-text-grey">
+                Ich möchte mich persönlich bei meinem Lehrer für Webtechnologie, Silvan Wegmann, für sein außergewöhnliches Engagement im Unterricht bedanken. Er hat mich dazu inspiriert, dieses Projekt auf meine Weise zu gestalten und zum Leben zu erwecken.
+            </p>
+            <p class="w3-large w3-text-grey">
+                Danke für die soliden Grundlagen, die Sie mir vermittelt haben, für Ihre stets gute Laune und Ihr unglaubliches pädagogisches Talent. Es war mir eine Freude, Teil Ihrer Klasse zu sein. Ich hoffe von ganzem Herzen, dass dieses Projekt die Erwartungen der Abschlussbewertung erfüllt und all das Wissen widerspiegelt, das ich mir durch Ihren Unterricht angeeignet habe.
+            </p>
+            <p style="color: #ffb6c1; font-size: 1em; text-align: center, cursive; text-shadow: 1px 1px 2px #fff;">
+                Luna DARWICH | Web-Technologien Module HSLU H2401
+            </p>
+            <canvas id="myCanvas" width="700" height="300" style="border:1px solid #000;"></canvas>
+            <script>
+                window.onload = function() {
+                    var canvas = document.getElementById("myCanvas");
+                    var ctx = canvas.getContext("2d");
+            
+                    ctx.fillStyle = "#F8BBD0";  
+                    ctx.fillRect(10, 50, 120, 80);
+            
+                    ctx.beginPath();
+                    ctx.arc(200, 90, 40, 0, 2 * Math.PI);
+                    ctx.fillStyle = "#F1C6D0"; 
+                    ctx.fill();
+            
+                    ctx.beginPath();
+                    ctx.moveTo(280, 50);
+                    ctx.lineTo(350, 150);
+                    ctx.strokeStyle = "#F4A1C1";  
+                    ctx.lineWidth = 3;
+                    ctx.stroke();
+                    ctx.font = "24px 'Pacifico', cursive";
+                    ctx.fillStyle = "FABEDE"; 
+                    ctx.fillText("☆ HSLU ☆", 400, 80);
+            
+                    ctx.beginPath();
+                    ctx.arc(500, 150, 40, 0, Math.PI, false);
+                    ctx.strokeStyle = "#F7C0D4"; 
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+            
+                    ctx.beginPath();
+                    ctx.moveTo(100, 200);
+                    ctx.bezierCurveTo(200, 150, 300, 250, 400, 200);
+                    ctx.strokeStyle = "#F5B8C1"; 
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+            
+                    var gradient = ctx.createLinearGradient(10, 250, canvas.width, 250);
+                    gradient.addColorStop(0, "#FFB6C1");  
+                    gradient.addColorStop(0.5, "#FFE4E1");  
+                    gradient.addColorStop(1, "#FFF5EE");  
+                    ctx.fillStyle = gradient;
+                    ctx.fillRect(10, 250, 700, 30);
+            
+                    ctx.fillStyle = "#FAD6D6"; 
+                    ctx.fillRect(550, 50, 80, 80);
+                    ctx.lineWidth = 3;
+                    ctx.strokeStyle = "#F4A1C1";  
+                    ctx.strokeRect(550, 50, 80, 80);
+            
+                    ctx.beginPath();
+                    ctx.ellipse(300, 250, 60, 30, 0, 0, 2 * Math.PI);
+                    ctx.fillStyle = "#F8D9D9"; 
+                    ctx.fill();
+            
+                    ctx.beginPath();
+                    ctx.moveTo(650, 200);
+                    ctx.lineTo(680, 250);
+                    ctx.lineTo(620, 250);
+                    ctx.closePath();
+                    ctx.fillStyle = "#F2D1D1";  
+                    ctx.fill();
+                };
+            </script>                   
+        </div>
+    </section>    
+
+    <script src="js/concordance.js"></script>
+
+</body>
+</html>
